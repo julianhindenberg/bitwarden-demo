@@ -1,0 +1,146 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: bitwarden-volume1
+spec:
+  storageClassName: "shared-storage"
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  local:
+    path: /data/Bitwarden/volume1
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: Exists
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: bitwarden-volume2
+spec:
+  storageClassName: "shared-storage"
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  local:
+    path: /data/Bitwarden/volume2
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: Exists
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: bitwarden-volume3
+spec:
+  storageClassName: "shared-storage"
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  local:
+    path: /data/Bitwarden/volume3
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: Exists
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: bitwarden-volume4
+spec:
+  storageClassName: "shared-storage"
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  local:
+    path: /data/Bitwarden/volume4
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: Exists
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: bitwarden-volume5
+spec:
+  storageClassName: "shared-storage-database"
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  local:
+    path: /data/Bitwarden/volume5
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: Exists
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: bitwarden-volume6
+spec:
+  storageClassName: "shared-storage-database"
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  local:
+    path: /data/Bitwarden/volume6
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: Exists
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: bitwarden-volume7
+spec:
+  storageClassName: "shared-storage-database"
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Delete
+  local:
+    path: /data/Bitwarden/volume7
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: Exists

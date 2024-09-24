@@ -1,0 +1,16 @@
+general:
+  domain: "bitwarden.example.com"
+  ingress:
+    annotations:
+      nginx.ingress.kubernetes.io/use-regex: "true"
+      nginx.ingress.kubernetes.io/rewrite-target: /$1
+  volumeAccessMode: "ReadWriteOnce"
+
+database:
+  volume:
+    backups:
+      storageClass: "shared-storage-database"
+    data:
+      storageClass: "shared-storage-database"
+    log:
+      storageClass: "shared-storage-database"
