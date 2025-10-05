@@ -18,14 +18,24 @@ helm upgrade --install ingress-nginx ingress-nginx \
 # Create namespace
 kubectl create namespace bitwarden
 
+# Encode and insert the installation id and installation key to secrets.yaml
+echo "my-installation-id" | base64
+
 # Apply additional manifests
 kubectl apply -f secrets.yaml -f persistent-volumes.yaml
 
 # Install Bitwarden
+helm repo add bitwarden https://charts.bitwarden.com/
+helm repo update
 helm upgrade bitwarden bitwarden/self-host --install --namespace bitwarden --values my-values.yaml
 
-# (Configure domain override in /etc/hosts file)
+# (Configure domain override in /etc/hosts file for IPv4 and IPv6)
 
-# Request to IP endpoint
-curl --insecure https://bitwarden.example.com/api/ip
+# Perform calls to Bitwarden, either via
+curl --insecure -6 https://bitwarden.example.com/
+# or via browser.
+
+# Check the API pod logs. Entries like the following will occur when connecting via IPv6:
+DeviceType: Origin: ClientVersion:
+      Unknown proxy: [::ffff:10.42.0.28]:41432
 ```
